@@ -6,24 +6,24 @@ import { VerificationBadge } from '../common/Badge';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#064E3B] text-[#FAF8F0] border-t border-[#D4AF37]/30 pt-16 pb-12 relative overflow-hidden">
+    <footer className="bg-[#064E3B] text-[#FAF8F0] border-t border-[#D4AF37]/30 pt-12 sm:pt-16 pb-8 sm:pb-12 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#073D32] rounded-full blur-3xl pointer-events-none opacity-40"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-12 border-b border-white/10">
           {/* Column 1: School Identity & Lions Club Patronage (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <img
                 src="/assets/logo-school-hd.jpg"
                 alt="LCH SGT High School Emblem"
-                className="w-16 h-16 object-contain rounded-xl bg-white p-1 border-2 border-[#D4AF37]/50 shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-xl bg-white p-1 border-2 border-[#D4AF37]/50 shadow-md"
               />
               <img
                 src="/assets/logo-lions-hd.jpg"
                 alt="Lions Club of Hyderabad Emblem"
-                className="w-16 h-16 object-contain rounded-xl bg-white p-1 border-2 border-[#D4AF37]/50 shadow-md"
+                className="w-14 h-14 sm:w-16 sm:h-16 object-contain rounded-xl bg-white p-1 border-2 border-[#D4AF37]/50 shadow-md"
               />
             </div>
 
@@ -198,15 +198,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Copyright & Attribution */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 text-center sm:text-left">
           <p>
             &copy; {new Date().getFullYear()} {schoolInfo.name}. All rights reserved. 40 Years of Educational Dedication.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-6">
             <span className="text-neutral-400">
               Patron: <strong className="text-white font-normal">Lions Club of Hyderabad</strong>
             </span>
-            <span className="text-white/20">•</span>
+            <span className="text-white/20 hidden xs:inline">•</span>
             <Link to="/contact" className="hover:text-white transition-colors">
               Privacy & Safeguarding
             </Link>

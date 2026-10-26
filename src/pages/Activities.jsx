@@ -71,14 +71,14 @@ export default function Activities() {
               </GoldPillBadge>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-6">
               Nurturing Body, Mind & Character <br />
               <span className="text-gold-gradient italic font-normal">
                 Beyond Textbooks
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-neutral-200 leading-relaxed font-light">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-light">
               Education at LCH SGT High School encompasses yoga, sports, collaborative assemblies, public speaking, and hands-on discovery to build capable, grounded individuals.
             </p>
           </div>
@@ -86,15 +86,15 @@ export default function Activities() {
       </section>
 
       {/* 2. THE 5 CORE PILLARS (Detailed Editorial Sections with authentic images) */}
-      <section className="py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-24">
           {activitiesData.map((act, index) => {
             const isReversed = index % 2 !== 0;
             return (
               <div 
                 key={act.id}
                 id={act.id}
-                className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${
                   isReversed ? 'lg:flex-row-reverse' : ''
                 }`}
               >
@@ -105,7 +105,7 @@ export default function Activities() {
                       <img
                         src={act.image}
                         alt={act.title}
-                        className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-56 xs:h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     {/* Secondary supporting crop */}
@@ -122,20 +122,20 @@ export default function Activities() {
                 </div>
 
                 {/* Narrative content (7 cols) */}
-                <div className={`lg:col-span-7 space-y-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className={`lg:col-span-7 space-y-4 sm:space-y-5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
                   <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block">
                     Pillar 0{index + 1} • {act.category}
                   </span>
 
-                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#073D32] leading-tight">
+                  <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-[#073D32] leading-tight">
                     {act.title}
                   </h2>
 
-                  <p className="text-base text-[#064E3B] font-semibold italic">
+                  <p className="text-sm sm:text-base text-[#064E3B] font-semibold italic">
                     "{act.tagline}"
                   </p>
 
-                  <p className="text-base text-neutral-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                     {act.description}
                   </p>
 
@@ -234,38 +234,38 @@ export default function Activities() {
       </section>
 
       {/* 4. VIDEO & MEDIA SPOTLIGHT */}
-      <section className="py-20 bg-[#073D32] text-white">
+      <section className="py-16 sm:py-20 bg-[#073D32] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-[#064E3B] border border-[#D4AF37]/30 p-8 sm:p-12 lg:p-16 overflow-hidden relative shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7 space-y-5">
+          <div className="rounded-3xl bg-[#064E3B] border border-[#D4AF37]/30 p-5 sm:p-12 lg:p-16 overflow-hidden relative shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+              <div className="lg:col-span-7 space-y-4 sm:space-y-5">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
                   Documentary Video Showcase
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+                <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-white">
                   A Day in the Life of an LCH SGT Student
                 </h2>
-                <p className="text-base text-neutral-200 leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-200 leading-relaxed">
                   Experience our morning assemblies, mindful breathing drills, interactive class sessions, and cheerful outdoor activity on campus.
                 </p>
-                <div className="pt-2 flex items-center gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                   <button
                     onClick={() => setVideoModalOpen(true)}
-                    className="btn-gold inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold shadow-lg"
+                    className="btn-gold w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl text-sm font-semibold shadow-lg text-center"
                   >
                     <Play className="w-4 h-4 fill-current text-[#073D32]" />
                     <span>Watch School Video</span>
                   </button>
                   <Link
                     to="/about"
-                    className="text-xs text-[#D4AF37] hover:underline"
+                    className="text-xs text-[#D4AF37] hover:underline text-center sm:text-left py-1"
                   >
                     Learn about our heritage &rarr;
                   </Link>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative">
+              <div className="lg:col-span-5 relative mt-4 lg:mt-0">
                 <div 
                   onClick={() => setVideoModalOpen(true)}
                   className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-[#D4AF37]/50 cursor-pointer group"
@@ -273,11 +273,11 @@ export default function Activities() {
                   <img
                     src="/assets/photo-kids-running-hd.jpg"
                     alt="School video preview"
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-[#D4AF37] text-[#073D32] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                      <Play className="w-6 h-6 fill-current ml-1" />
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#D4AF37] text-[#073D32] flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                      <Play className="w-5 h-5 sm:w-6 sm:h-6 fill-current ml-1" />
                     </div>
                   </div>
                 </div>
@@ -288,25 +288,25 @@ export default function Activities() {
       </section>
 
       {/* 5. CLOSING CTA */}
-      <section className="py-20 bg-[#FAF8F0] text-center border-t border-[#CDDCD2]/60">
+      <section className="py-16 sm:py-20 bg-[#FAF8F0] text-center border-t border-[#CDDCD2]/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#073D32] mb-4">
+          <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-[#073D32] mb-3 sm:mb-4">
             Witness the Impact in Person
           </h2>
-          <p className="text-base text-neutral-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
             We welcome prospective parents and corporate CSR representatives to visit our campus and observe our student activities firsthand.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4">
             <Link
               to="/admissions"
-              className="btn-emerald inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold shadow-md"
+              className="btn-emerald w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl text-sm font-semibold shadow-md text-center"
             >
               <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
               <span>Admissions Information</span>
             </Link>
             <Link
               to="/about"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#073D32] text-sm font-semibold border border-[#CDDCD2] hover:bg-neutral-50 transition-colors shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-white text-[#073D32] text-sm font-semibold border border-[#CDDCD2] hover:bg-neutral-50 transition-colors shadow-sm text-center"
             >
               <span>Our 40-Year Story</span>
             </Link>

@@ -69,26 +69,26 @@ export default function Header() {
         className={`sticky top-0 z-40 transition-all duration-300 ${headerBackgroundClass}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo and Brand identity */}
             <Link
               to="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#D4AF37] rounded-lg p-1"
+              className="flex items-center gap-2.5 xs:gap-3 group focus:outline-none focus:ring-2 focus:ring-[#D4AF37] rounded-lg p-1"
               aria-label="LCH SGT High School Home"
             >
               <div className="relative">
                 <img
                   src="/assets/logo-school-hd.jpg"
                   alt="LCH SGT High School Emblem"
-                  className="w-12 h-12 md:w-14 md:h-14 object-contain rounded-lg bg-white p-1 shadow-md border border-[#D4AF37]/40 group-hover:scale-105 transition-transform duration-300"
+                  className="w-10 h-10 xs:w-12 xs:h-12 md:w-14 md:h-14 object-contain rounded-lg bg-white p-1 shadow-md border border-[#D4AF37]/40 group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif font-bold text-lg md:text-xl tracking-tight text-white group-hover:text-[#F4E8C1] transition-colors leading-tight">
+                <span className="font-serif font-bold text-sm xs:text-base sm:text-lg md:text-xl tracking-tight text-white group-hover:text-[#F4E8C1] transition-colors leading-tight">
                   LCH SGT High School
                 </span>
                 <div className="flex items-center gap-2 mt-0.5">
-                  <span className="text-[10px] md:text-xs font-semibold text-[#D4AF37] tracking-wider uppercase">
+                  <span className="text-[9px] xs:text-[10px] md:text-xs font-semibold text-[#D4AF37] tracking-wider uppercase">
                     40 Years Legacy
                   </span>
                   <span className="text-white/40 text-[10px] hidden sm:inline">•</span>
@@ -133,7 +133,7 @@ export default function Header() {
             <div className="flex items-center gap-2 lg:hidden">
               <Link
                 to="/csr-support"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#D4AF37] text-[#073D32] font-semibold text-xs"
+                className="hidden xs:inline-flex items-center gap-1.5 px-2.5 xs:px-3 py-1.5 rounded-md bg-[#D4AF37] text-[#073D32] font-semibold text-xs"
               >
                 <HeartHandshake className="w-3.5 h-3.5" />
                 <span>Partner</span>

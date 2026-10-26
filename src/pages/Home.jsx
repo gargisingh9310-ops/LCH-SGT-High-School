@@ -15,7 +15,7 @@ import {
   BookOpen,
   Award
 } from 'lucide-react';
-import { activitiesData, schoolInfo, csrOpportunities } from '../data/schoolData';
+import { schoolInfo, csrOpportunities } from '../data/schoolData';
 import { GoldPillBadge, VerificationBadge } from '../components/common/Badge';
 
 const ThreeParticles = React.lazy(() => import('../components/effects/ThreeParticles'));
@@ -56,16 +56,15 @@ export default function Home() {
         ease: 'power2.out'
       });
 
-      // Activities cards staggered reveal
-      gsap.from('.activity-card', {
+      // Activities section entrance
+      gsap.from(activitiesRef.current, {
         scrollTrigger: {
           trigger: activitiesRef.current,
-          start: 'top 75%',
+          start: 'top 85%',
         },
-        y: 40,
+        y: 30,
         opacity: 0,
         duration: 0.8,
-        stagger: 0.12,
         ease: 'power2.out'
       });
 
@@ -113,17 +112,17 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col justify-center py-12">
           <div className="max-w-3xl">
             {/* School Logo & Credibility Badge */}
-            <div className="hero-reveal flex flex-wrap items-center justify-center sm:justify-start gap-4 mb-6">
-              <div className="p-1.5 bg-white rounded-xl shadow-lg border border-[#D4AF37]/50 inline-flex items-center gap-3">
+            <div className="hero-reveal flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 mb-6">
+              <div className="p-1.5 bg-white rounded-xl shadow-lg border border-[#D4AF37]/50 inline-flex items-center gap-2 sm:gap-3">
                 <img
                   src="/assets/logo-school-hd.jpg"
                   alt="LCH SGT High School Official Logo"
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                 />
                 <img
                   src="/assets/logo-lions-hd.jpg"
                   alt="Lions Club of Hyderabad Logo"
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                 />
               </div>
               <GoldPillBadge>
@@ -134,30 +133,30 @@ export default function Home() {
             {/* Main Headline */}
             <h1 
               ref={headlineRef}
-              className="hero-reveal font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1] mb-6"
+              className="hero-reveal font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.12] sm:leading-[1.1] mb-6"
             >
-              Where Learning <br />
-              <span className="text-gold-gradient italic font-normal">Goes Beyond</span> <br />
+              Where Learning <br className="hidden sm:inline" />
+              <span className="text-gold-gradient italic font-normal">Goes Beyond</span> <br className="hidden sm:inline" />
               the Classroom
             </h1>
 
             {/* Supporting Copy */}
-            <p className="hero-reveal text-base sm:text-lg md:text-xl text-neutral-200/95 leading-relaxed font-normal mb-8 max-w-2xl">
+            <p className="hero-reveal text-sm sm:text-lg md:text-xl text-neutral-200/95 leading-relaxed font-normal mb-8 max-w-2xl">
               At LCH SGT High School, education goes beyond textbooks. We nurture confident, disciplined, healthy, and compassionate learners through meaningful educational experiences.
             </p>
 
             {/* Dual Calls to Action */}
-            <div className="hero-reveal flex flex-col sm:flex-row items-stretch sm:items-center justify-center sm:justify-start gap-4">
+            <div className="hero-reveal flex flex-col sm:flex-row items-stretch sm:items-center justify-center sm:justify-start gap-3 sm:gap-4">
               <Link
                 to="/csr-support"
-                className="btn-gold inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl text-base font-semibold shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
+                className="btn-gold w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
               >
                 <HeartHandshake className="w-5 h-5 text-[#073D32]" />
                 <span>Partner With Us</span>
               </Link>
               <Link
                 to="/admissions"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-base border border-white/25 backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm sm:text-base border border-white/25 backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white"
               >
                 <GraduationCap className="w-5 h-5 text-[#D4AF37]" />
                 <span>Admissions Open</span>
@@ -197,7 +196,7 @@ export default function Home() {
                 <img
                   src="/assets/classroom-interactive.jpg"
                   alt="Students engaged in interactive classroom learning at LCH SGT High School"
-                  className="w-full h-[420px] object-cover"
+                  className="w-full h-[260px] xs:h-[340px] sm:h-[420px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -234,7 +233,7 @@ export default function Home() {
                 Our Educational Mission
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32] leading-tight">
+              <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32] leading-tight">
                 Every Child Deserves the Opportunity to Learn and Grow
               </h2>
 
@@ -259,7 +258,7 @@ export default function Home() {
               <div className="pt-4">
                 <Link
                   to="/about"
-                  className="btn-emerald inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold shadow-md"
+                  className="btn-emerald w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold shadow-md"
                 >
                   <span>Discover Our Story</span>
                   <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
@@ -277,7 +276,7 @@ export default function Home() {
             <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] mb-2 block">
               Four Decades of Excellence
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
+            <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-white">
               A Legacy of Community-Rooted Education
             </h2>
             <p className="text-sm text-neutral-300 mt-2">
@@ -285,13 +284,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {schoolInfo.stats.map((stat, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/40 transition-all text-center group hover:bg-white/10"
+                className="p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/40 transition-all text-center group hover:bg-white/10"
               >
-                <div className="font-serif text-4xl sm:text-5xl font-bold text-gold-gradient mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-gold-gradient mb-1.5 sm:mb-2 group-hover:scale-105 transition-transform duration-300">
                   {stat.value}
                 </div>
                 <div className="text-xs sm:text-sm font-medium text-neutral-200">
@@ -306,105 +305,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: LEARNING BEYOND THE CLASSROOM (Photo-led Grid from Poster) */}
+      {/* SECTION 4: LEARNING BEYOND THE CLASSROOM */}
       <section 
         ref={activitiesRef}
-        className="py-20 lg:py-28 bg-[#FAF8F0]"
+        className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F0] border-b border-[#CDDCD2]/60"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="max-w-2xl">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block mb-3">
-                Real School Experiences
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32]">
-                Learning Beyond the Classroom
-              </h2>
-              <p className="text-base text-neutral-600 mt-3 leading-relaxed">
-                Authentic glimpses of our students practicing mindfulness, physical athletics, collaborative assemblies, and experiential projects.
-              </p>
-            </div>
-            <div>
-              <Link
-                to="/activities"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#064E3B] hover:text-[#073D32] group"
-              >
-                <span>Explore All School Activities</span>
-                <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          {/* 5 Real Activities Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {activitiesData.map((act) => (
-              <div
-                key={act.id}
-                className="activity-card group rounded-2xl overflow-hidden bg-white border border-[#CDDCD2] shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
-              >
-                <div className="relative h-64 overflow-hidden bg-neutral-100">
-                  <img
-                    src={act.image}
-                    alt={act.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[11px] font-semibold uppercase tracking-wider bg-[#064E3B]/90 text-white px-3 py-1 rounded-full backdrop-blur-sm">
-                      {act.category}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6 flex-1 flex flex-col justify-between">
-                  <div>
-                    <h3 className="font-serif font-bold text-xl text-[#073D32] mb-2 group-hover:text-[#064E3B] transition-colors">
-                      {act.title}
-                    </h3>
-                    <p className="text-xs text-[#064E3B] font-semibold mb-2">
-                      {act.tagline}
-                    </p>
-                    <p className="text-sm text-neutral-600 leading-relaxed line-clamp-3">
-                      {act.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-5 mt-5 border-t border-neutral-100 flex items-center justify-between">
-                    <span className="text-xs text-neutral-500">
-                      {act.highlights[0]}
-                    </span>
-                    <Link
-                      to="/activities"
-                      className="text-xs font-bold text-[#064E3B] hover:text-[#D4AF37] inline-flex items-center gap-1"
-                    >
-                      <span>Details &rarr;</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Poster Reference Feature Card */}
-            <div className="activity-card group rounded-2xl overflow-hidden bg-gradient-to-br from-[#064E3B] to-[#073D32] text-white p-8 shadow-xl flex flex-col justify-between border border-[#D4AF37]/30">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Heading, Narrative, and Holistic Activity Highlights (7 cols) */}
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
               <div>
-                <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold">
-                  Institutional Slogan
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block mb-3">
+                  Real School Experiences
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-white mt-3 leading-snug">
-                  "Every Child. Every Talent. Every Step Towards a Brighter Future."
-                </h3>
-                <p className="text-sm text-neutral-200 mt-4 leading-relaxed">
-                  Every activity at our school is intentional—designed to foster self-reliance, physical vitality, concentration, and good citizenship.
+                <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32] leading-tight">
+                  Learning Beyond the Classroom
+                </h2>
+                <p className="text-sm sm:text-base md:text-lg text-neutral-600 mt-3 sm:mt-4 leading-relaxed">
+                  Authentic glimpses of our students practicing mindfulness, physical athletics, collaborative assemblies, and experiential projects.
                 </p>
               </div>
 
-              <div className="pt-6">
+              {/* 4 Feature Highlights Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+                <div className="flex items-center gap-2.5 text-sm font-medium text-neutral-800">
+                  <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
+                  <span>Daily Yoga & Mindfulness</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-sm font-medium text-neutral-800">
+                  <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
+                  <span>Outdoor Sports & Athletics</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-sm font-medium text-neutral-800">
+                  <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
+                  <span>Assemblies & Teamwork</span>
+                </div>
+                <div className="flex items-center gap-2.5 text-sm font-medium text-neutral-800">
+                  <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
+                  <span>Hands-on Experiential Discovery</span>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className="pt-2">
                 <Link
                   to="/activities"
-                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold w-full justify-center shadow-lg"
+                  className="btn-emerald inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold shadow-md w-full sm:w-auto justify-center"
                 >
-                  <span>View Photo Gallery</span>
-                  <ArrowRight className="w-4 h-4 text-[#073D32]" />
+                  <span>Explore All School Activities</span>
+                  <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
                 </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Institutional Slogan Card (5 cols) */}
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-[#064E3B] to-[#073D32] text-white p-6 sm:p-8 lg:p-10 shadow-xl border border-[#D4AF37]/30 flex flex-col justify-between">
+                <div>
+                  <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-2">
+                    Institutional Slogan
+                  </span>
+                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-snug">
+                    "Every Child. Every Talent. Every Step Towards a Brighter Future."
+                  </h3>
+                  <p className="text-xs sm:text-sm text-neutral-200 mt-3 sm:mt-4 leading-relaxed">
+                    Every activity at our school is intentional—designed to foster self-reliance, physical vitality, concentration, and good citizenship.
+                  </p>
+                </div>
+
+                <div className="pt-6 sm:pt-8 mt-4 border-t border-white/10">
+                  <Link
+                    to="/activities"
+                    className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold w-full justify-center shadow-lg"
+                  >
+                    <span>View Photo Gallery</span>
+                    <ArrowRight className="w-4 h-4 text-[#073D32]" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -414,32 +391,32 @@ export default function Home() {
       {/* SECTION 5: CSR PARTNERSHIP FEATURE (Dedicated Deep-Green Corporate Gateway) */}
       <section 
         ref={csrRef}
-        className="py-20 lg:py-28 bg-[#064E3B] text-white relative overflow-hidden"
+        className="py-16 sm:py-20 lg:py-28 bg-[#064E3B] text-white relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#073D32] rounded-full blur-3xl pointer-events-none opacity-50"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Narrative */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-6 space-y-5 sm:space-y-6">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#D4AF37] bg-white/10 px-3.5 py-1.5 rounded-full inline-block">
                 Corporate Social Responsibility
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+              <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
                 Your Partnership Can Help Shape a Brighter Future
               </h2>
 
-              <p className="text-base sm:text-lg text-neutral-200 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-neutral-200 leading-relaxed">
                 Organizations, industrial leaders, and charitable foundations are invited to explore supporting education and student welfare through focused CSR initiatives and impactful charitable contributions.
               </p>
 
               {/* 3 Core CSR Themes */}
-              <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
+              <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
                   <BookOpen className="w-5 h-5 text-[#D4AF37] shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-semibold text-base text-white">
+                    <h4 className="font-serif font-semibold text-sm sm:text-base text-white">
                       Educational Opportunities
                     </h4>
                     <p className="text-xs text-neutral-300 mt-0.5">
@@ -448,10 +425,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
                   <Smile className="w-5 h-5 text-[#D4AF37] shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-semibold text-base text-white">
+                    <h4 className="font-serif font-semibold text-sm sm:text-base text-white">
                       Student Wellbeing & Development
                     </h4>
                     <p className="text-xs text-neutral-300 mt-0.5">
@@ -460,10 +437,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
                   <ShieldCheck className="w-5 h-5 text-[#D4AF37] shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-serif font-semibold text-base text-white">
+                    <h4 className="font-serif font-semibold text-sm sm:text-base text-white">
                       Community & Infrastructure Impact
                     </h4>
                     <p className="text-xs text-neutral-300 mt-0.5">
@@ -473,17 +450,17 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="pt-4 flex flex-wrap gap-4">
+              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   to="/csr-support"
-                  className="btn-gold inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold shadow-lg"
+                  className="btn-gold w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl text-sm font-semibold shadow-lg text-center"
                 >
                   <HeartHandshake className="w-4 h-4 text-[#073D32]" />
                   <span>Explore CSR Partnerships</span>
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/20 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/20 transition-all text-center"
                 >
                   <span>Speak With School Trustees</span>
                 </Link>
@@ -491,12 +468,12 @@ export default function Home() {
             </div>
 
             {/* Right: Boardroom collaboration photograph */}
-            <div className="lg:col-span-6 relative">
+            <div className="lg:col-span-6 relative mt-4 lg:mt-0">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
                 <img
                   src="/assets/csr-boardroom.jpg"
                   alt="Corporate and school leaders discussing CSR partnership"
-                  className="w-full h-[460px] object-cover"
+                  className="w-full h-[260px] xs:h-[340px] sm:h-[460px] object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-[#073D32] p-5 rounded-xl border border-[#D4AF37]/40 shadow-xl max-w-xs hidden sm:block">
@@ -513,63 +490,63 @@ export default function Home() {
       </section>
 
       {/* SECTION 6: ADMISSIONS FEATURE (Family & Parent Warmth) */}
-      <section className="py-20 lg:py-24 bg-[#FAF8F0] border-b border-[#CDDCD2]/60">
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#FAF8F0] border-b border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-white border border-[#CDDCD2] p-8 sm:p-12 lg:p-16 shadow-xl relative overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-7 space-y-5">
+          <div className="rounded-3xl bg-white border border-[#CDDCD2] p-5 sm:p-12 lg:p-16 shadow-xl relative overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
+              <div className="lg:col-span-7 space-y-4 sm:space-y-5">
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block">
                   Admissions Open
                 </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32]">
+                <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold text-[#073D32]">
                   A Place to Learn, Grow, and Belong
                 </h2>
-                <p className="text-base text-neutral-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                   We welcome families seeking a disciplined, caring, and stimulating educational environment for their children. Connect with our admission counselors to understand our curriculum, values, and enrollment criteria.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="flex items-center gap-2.5 text-sm text-neutral-800">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
+                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800">
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Values-first holistic curriculum</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm text-neutral-800">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800">
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Active sports & yoga routines</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm text-neutral-800">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800">
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Attentive classroom sizes</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-sm text-neutral-800">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-neutral-800">
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Supportive community culture</span>
                   </div>
                 </div>
 
-                <div className="pt-4 flex flex-wrap gap-4">
+                <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link
                     to="/admissions"
-                    className="btn-emerald inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold shadow-md"
+                    className="btn-emerald w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl text-sm font-semibold shadow-md text-center"
                   >
                     <GraduationCap className="w-4 h-4 text-[#D4AF37]" />
                     <span>Enquire About Admissions</span>
                   </Link>
                   <a
                     href={`tel:${schoolInfo.phones[0].raw}`}
-                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-[#073D32] text-sm font-semibold transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-[#073D32] text-sm font-semibold transition-colors text-center"
                   >
                     <span>Helpline: {schoolInfo.phones[0].display}</span>
                   </a>
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative">
+              <div className="lg:col-span-5 relative mt-4 lg:mt-0">
                 <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-neutral-100">
                   <img
                     src="/assets/photo-kids-running-hd.jpg"
                     alt="Children joyfully walking towards LCH SGT High School campus"
-                    className="w-full h-80 object-cover"
+                    className="w-full h-56 xs:h-64 sm:h-80 object-cover"
                   />
                 </div>
               </div>

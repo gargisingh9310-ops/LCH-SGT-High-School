@@ -18,7 +18,7 @@ export default function GeneralContactForm() {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-xl border border-[#CDDCD2] relative overflow-hidden">
+    <div className="bg-white rounded-2xl p-4 xs:p-6 sm:p-10 shadow-xl border border-[#CDDCD2] relative overflow-hidden">
       <div className="mb-8">
         <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3 py-1 rounded-full inline-block mb-3">
           Direct School Office

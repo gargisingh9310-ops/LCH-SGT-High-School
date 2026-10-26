@@ -47,28 +47,28 @@ export default function Admissions() {
               <VerificationBadge verified={true} label="Admissions Open" />
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4 sm:mb-6">
               Take the Next Step in Your <br />
               <span className="text-gold-gradient italic font-normal">
                 Child's Learning Journey
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-neutral-200 leading-relaxed font-light mb-8 max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-neutral-200 leading-relaxed font-light mb-6 sm:mb-8 max-w-2xl">
               Discover a disciplined, nurturing school culture where moral values, physical wellbeing, and joyful learning prepare children for lifelong success.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <button
                 onClick={scrollToForm}
-                className="btn-gold inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold shadow-xl"
+                className="btn-gold w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold shadow-xl text-center"
               >
                 <GraduationCap className="w-5 h-5 text-[#073D32]" />
                 <span>Submit an Admission Enquiry</span>
               </button>
               <a
                 href={`tel:${schoolInfo.phones[0].raw}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/25 backdrop-blur-sm transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium border border-white/25 backdrop-blur-sm transition-all text-center"
               >
                 <Phone className="w-4 h-4 text-[#D4AF37]" />
                 <span>Call Admissions: {schoolInfo.phones[0].display}</span>
@@ -79,25 +79,25 @@ export default function Admissions() {
       </section>
 
       {/* 2. SCHOOL INTRODUCTION & ETHOS */}
-      <section className="py-20 lg:py-24 border-b border-[#CDDCD2]/60">
+      <section className="py-16 sm:py-20 lg:py-24 border-b border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7 space-y-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block">
                 Educational Philosophy
               </span>
 
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#073D32] leading-tight">
+              <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-[#073D32] leading-tight">
                 Nurturing Confident, Disciplined & Compassionate Learners
               </h2>
 
-              <p className="text-base text-neutral-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-neutral-700 leading-relaxed">
                 At LCH SGT High School, we prioritize the foundational years of a child’s life. Rather than burdening young minds with rote pressure, our teachers cultivate curiosity, self-confidence, and sound moral discernment.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
-                  <h4 className="font-serif font-bold text-[#064E3B] text-base mb-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
+                  <h4 className="font-serif font-bold text-[#064E3B] text-sm sm:text-base mb-1">
                     Morning Mindfulness
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -105,8 +105,8 @@ export default function Admissions() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
-                  <h4 className="font-serif font-bold text-[#064E3B] text-base mb-1">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
+                  <h4 className="font-serif font-bold text-[#064E3B] text-sm sm:text-base mb-1">
                     Outdoor Vitality
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -114,8 +114,8 @@ export default function Admissions() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
-                  <h4 className="font-serif font-bold text-[#064E3B] text-base mb-1">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
+                  <h4 className="font-serif font-bold text-[#064E3B] text-sm sm:text-base mb-1">
                     Oral Expression
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -123,8 +123,8 @@ export default function Admissions() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
-                  <h4 className="font-serif font-bold text-[#064E3B] text-base mb-1">
+                <div className="p-3.5 sm:p-4 rounded-xl bg-white border border-[#CDDCD2] shadow-sm">
+                  <h4 className="font-serif font-bold text-[#064E3B] text-sm sm:text-base mb-1">
                     Accessible Affordability
                   </h4>
                   <p className="text-xs text-neutral-600 leading-relaxed">
@@ -134,15 +134,15 @@ export default function Admissions() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-white">
                 <img
                   src="/assets/photo-kids-running-hd.jpg"
                   alt="Students on school campus"
-                  className="w-full h-80 object-cover"
+                  className="w-full h-56 xs:h-64 sm:h-80 object-cover"
                 />
                 <div className="p-4 bg-[#064E3B] text-white">
-                  <p className="font-serif font-bold text-base text-[#D4AF37]">
+                  <p className="font-serif font-bold text-sm sm:text-base text-[#D4AF37]">
                     A Welcoming Community for Every Child
                   </p>
                   <p className="text-xs text-neutral-300 mt-1">
@@ -156,13 +156,13 @@ export default function Admissions() {
       </section>
 
       {/* 3. CURRICULUM, GRADES & VERIFICATION NOTICE */}
-      <section className="py-20 lg:py-24 bg-white border-b border-[#CDDCD2]/60">
+      <section className="py-16 sm:py-20 lg:py-24 bg-white border-b border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block mb-3">
               Academic Structure
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#073D32]">
+            <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-[#073D32]">
               Classes & Educational Stages
             </h2>
             <p className="text-sm text-neutral-600 mt-2">
@@ -170,105 +170,105 @@ export default function Admissions() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
+            <div className="p-5 sm:p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-1.5 sm:mb-2">
                   Stage 01
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-[#073D32] mb-3">
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#073D32] mb-2 sm:mb-3">
                   Primary School
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
                   Focus on literacy, numeracy, language development, hand-eye coordination, and joyful group activities.
                 </p>
                 <ul className="space-y-2 text-xs text-neutral-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Foundation in reading & mathematics</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Storytelling & moral education</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Basic yoga & motor games</span>
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
+              <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
                 <span>Classes 1 to 5</span>
                 <VerificationBadge verified={false} label="Age 6+ Entry" className="text-[10px]" />
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-1.5 sm:mb-2">
                   Stage 02
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-[#073D32] mb-3">
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#073D32] mb-2 sm:mb-3">
                   Upper Primary
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
                   Strengthening analytical skills, scientific curiosity, social studies, and structured physical fitness routines.
                 </p>
                 <ul className="space-y-2 text-xs text-neutral-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Hands-on science demonstrations</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Team games & sports drills</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Public presentation practice</span>
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
+              <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
                 <span>Classes 6 to 7</span>
                 <VerificationBadge verified={false} label="Continuous Assessment" className="text-[10px]" />
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2] shadow-sm flex flex-col justify-between">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-2">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] block mb-1.5 sm:mb-2">
                   Stage 03
                 </span>
-                <h3 className="font-serif font-bold text-2xl text-[#073D32] mb-3">
+                <h3 className="font-serif font-bold text-xl sm:text-2xl text-[#073D32] mb-2 sm:mb-3">
                   High School
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed mb-4">
                   Rigorous preparation for board examinations, leadership responsibilities, career guidance, and civic ethics.
                 </p>
                 <ul className="space-y-2 text-xs text-neutral-700">
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Comprehensive curriculum coverage</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Mentorship by senior faculty</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-[#064E3B]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#064E3B] shrink-0" />
                     <span>Community service initiatives</span>
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
+              <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-neutral-200/60 flex items-center justify-between text-xs text-[#064E3B] font-semibold">
                 <span>Classes 8 to 10</span>
                 <VerificationBadge verified={false} label="Board Preparation" className="text-[10px]" />
               </div>
             </div>
           </div>
 
-          <div className="mt-12 max-w-3xl mx-auto">
+          <div className="mt-8 sm:mt-12 max-w-3xl mx-auto">
             <VerificationNotice
               title="Official Curriculum & Affiliation Notice"
               message="Specific state board affiliation details, precise annual fee schedule, and exact admission cutoff dates will be provided in writing during the in-person counseling session by the school administration."
@@ -278,13 +278,13 @@ export default function Admissions() {
       </section>
 
       {/* 4. ADMISSIONS PROCESS (4 Simple Steps) */}
-      <section className="py-20 lg:py-24 border-b border-[#CDDCD2]/60">
+      <section className="py-16 sm:py-20 lg:py-24 border-b border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block mb-3">
               Application Sequence
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#073D32]">
+            <h2 className="font-serif text-2xl xs:text-3xl sm:text-4xl font-bold text-[#073D32]">
               Simple 4-Step Admission Journey
             </h2>
             <p className="text-sm text-neutral-600 mt-2">
@@ -292,24 +292,24 @@ export default function Admissions() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {admissionSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 border border-[#CDDCD2] shadow-sm relative flex flex-col justify-between"
+                className="bg-white rounded-2xl p-5 sm:p-6 border border-[#CDDCD2] shadow-sm relative flex flex-col justify-between"
               >
                 <div>
-                  <div className="font-serif text-3xl font-bold text-[#D4AF37] mb-3">
+                  <div className="font-serif text-3xl font-bold text-[#D4AF37] mb-2 sm:mb-3">
                     {step.step}
                   </div>
-                  <h3 className="font-serif font-bold text-lg text-[#073D32] mb-2">
+                  <h3 className="font-serif font-bold text-base sm:text-lg text-[#073D32] mb-1.5 sm:mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
-                <div className="mt-6 pt-3 border-t border-neutral-100 text-xs font-semibold text-[#064E3B]">
+                <div className="mt-4 sm:mt-6 pt-3 border-t border-neutral-100 text-xs font-semibold text-[#064E3B]">
                   Step {idx + 1}
                 </div>
               </div>

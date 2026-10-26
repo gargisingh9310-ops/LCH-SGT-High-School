@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <div className="bg-[#FAF8F0] min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative bg-[#064E3B] text-white py-20 lg:py-24 overflow-hidden">
+      <section className="relative bg-[#064E3B] text-white py-12 sm:py-20 lg:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
             src="/assets/hero-campus-panoramic.jpg"
@@ -33,21 +33,21 @@ export default function Contact() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
               <GoldPillBadge>
                 Official School Communications
               </GoldPillBadge>
               <VerificationBadge verified={true} label="Helpline Verified" />
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
+            <h1 className="font-serif text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight mb-4">
               Connect With <br />
               <span className="text-gold-gradient italic font-normal">
                 LCH SGT High School
               </span>
             </h1>
 
-            <p className="text-lg text-neutral-200 leading-relaxed font-light max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg text-neutral-200 leading-relaxed font-light max-w-2xl">
               Whether you are an aspiring parent, a corporate CSR partner, an alumnus, or an educational well-wisher, we are ready to assist you.
             </p>
           </div>
@@ -55,11 +55,11 @@ export default function Contact() {
       </section>
 
       {/* 2. DIRECT CONTACT CHANNELS & VERIFIED HELPLINES */}
-      <section className="py-16 lg:py-20 border-b border-[#CDDCD2]/60">
+      <section className="py-10 sm:py-16 lg:py-20 border-b border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8">
             {/* Phone Card (Verified) */}
-            <div className="p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-[#064E3B] text-[#D4AF37] flex items-center justify-center shadow-md">
@@ -92,7 +92,7 @@ export default function Contact() {
             </div>
 
             {/* Email Card (Verified placeholder handling) */}
-            <div className="p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-[#073D32] text-[#D4AF37] flex items-center justify-center shadow-md">
@@ -116,7 +116,7 @@ export default function Contact() {
             </div>
 
             {/* Location Card */}
-            <div className="p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 rounded-xl bg-[#064E3B] text-[#D4AF37] flex items-center justify-center shadow-md">
@@ -147,9 +147,9 @@ export default function Contact() {
       </section>
 
       {/* 3. CONTACT FORM & DEDICATED PORTALS */}
-      <section className="py-20 lg:py-24">
+      <section className="py-10 sm:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-12">
             {/* Form Column (7 cols) */}
             <div className="lg:col-span-7">
               <GeneralContactForm />
@@ -158,7 +158,7 @@ export default function Contact() {
             {/* Dedicated Portals Column (5 cols) */}
             <div className="lg:col-span-5 space-y-6">
               {/* CSR Fast-Track Card */}
-              <div className="p-8 rounded-2xl bg-[#064E3B] text-white shadow-xl border border-[#D4AF37]/30">
+              <div className="p-5 sm:p-8 rounded-2xl bg-[#064E3B] text-white shadow-xl border border-[#D4AF37]/30">
                 <div className="flex items-center gap-2 mb-2 text-[#D4AF37] text-xs font-semibold uppercase tracking-wider">
                   <HeartHandshake className="w-4 h-4" />
                   <span>Corporate Partnership Portal</span>
@@ -171,14 +171,14 @@ export default function Contact() {
                 </p>
                 <Link
                   to="/csr-support"
-                  className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold shadow-md"
+                  className="btn-gold inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold shadow-md"
                 >
                   <span>Go to CSR Gateway &rarr;</span>
                 </Link>
               </div>
 
               {/* Admissions Fast-Track Card */}
-              <div className="p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-md">
+              <div className="p-5 sm:p-8 rounded-2xl bg-white border border-[#CDDCD2] shadow-md">
                 <div className="flex items-center gap-2 mb-2 text-[#064E3B] text-xs font-semibold uppercase tracking-wider">
                   <GraduationCap className="w-4 h-4" />
                   <span>Parents & Guardians</span>
@@ -191,14 +191,14 @@ export default function Contact() {
                 </p>
                 <Link
                   to="/admissions"
-                  className="btn-emerald inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold shadow-md"
+                  className="btn-emerald inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl text-xs font-bold shadow-md"
                 >
                   <span>Admission Enquiry &rarr;</span>
                 </Link>
               </div>
 
               {/* Campus Visitors Notice */}
-              <div className="p-6 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2]">
+              <div className="p-4 sm:p-6 rounded-2xl bg-[#FAF8F0] border border-[#CDDCD2]">
                 <h4 className="font-serif font-bold text-base text-[#073D32] mb-1">
                   Campus Visiting Protocol
                 </h4>
@@ -212,9 +212,9 @@ export default function Contact() {
       </section>
 
       {/* 4. MAP & LOCATION SECTION */}
-      <section className="py-16 bg-white border-t border-[#CDDCD2]/60">
+      <section className="py-10 sm:py-16 bg-white border-t border-[#CDDCD2]/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <span className="text-xs font-semibold uppercase tracking-widest text-[#064E3B] bg-[#E6EFE8] px-3.5 py-1.5 rounded-full inline-block mb-2">
               Regional Reference
             </span>
@@ -226,7 +226,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-[#CDDCD2] shadow-lg h-96 relative bg-neutral-100">
+          <div className="rounded-2xl overflow-hidden border border-[#CDDCD2] shadow-lg h-64 sm:h-96 relative bg-neutral-100">
             <iframe
               src={schoolInfo.location.embedMapUrl}
               title="Hyderabad City Location Map"
